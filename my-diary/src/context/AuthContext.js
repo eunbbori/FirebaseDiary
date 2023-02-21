@@ -5,6 +5,8 @@ const authReducer = (state,action) => {
   switch (action.type) {
     case "login" : //firebase에서 login과 회원가입은 같은 경우 
       return {...state, user: action.payload} //전개 구문 통한 객체 병합 (기존 정보 + 새로운 action.payload)
+    case "logout" : 
+      return {...state, user:null}
     default:
       return state;
   }
